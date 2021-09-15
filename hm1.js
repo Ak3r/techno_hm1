@@ -5,10 +5,10 @@ const solveEquation = (arr) => {
 
     let equation = `${a} * x^2 + ${b} * x + ${c} = 0`;
 
-    let discriminant = Math.pow(b,2) - (4 * a * c);
+    let discriminant = b**2 - (4 * a * c);
 
-    switch(discriminant > 0) {
-        case true: 
+    switch(true) {
+        case discriminant > 0: 
             console.log(
                 `
                 Equation: ${equation},
@@ -18,7 +18,7 @@ const solveEquation = (arr) => {
                     x2: ${(-b - Math.sqrt(discriminant)) / 2 * a}
                 `);
             break;
-        case false: 
+        case discriminant < 0: 
             console.log(
                 `
                 Equation: ${equation},
