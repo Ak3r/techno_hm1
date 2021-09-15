@@ -8,9 +8,21 @@ const solveEquation = (arr) => {
     let discriminant = Math.pow(b,2) - (4 * a * c);
 
     if(discriminant < 0) {
-        return console.log(`No Roots!`);
+        return console.log(
+            `
+            Equation: ${equation},
+            Discriminant: ${discriminant},
+            Roots: 
+                No Roots!
+            `);
     } else if(discriminant === 0) {
-        return `x: ${(-b + Math.sqrt(discriminant)) / 2 * a}`;
+        return console.log(
+            `
+            Equation: ${equation},
+            Discriminant: ${discriminant},
+            Roots: 
+                x: ${(-b + Math.sqrt(discriminant)) / 2 * a}
+            `);
     } else {
         return console.log(
             `
