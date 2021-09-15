@@ -7,31 +7,35 @@ const solveEquation = (arr) => {
 
     let discriminant = Math.pow(b,2) - (4 * a * c);
 
-    if(discriminant < 0) {
-        return console.log(
-            `
-            Equation: ${equation},
-            Discriminant: ${discriminant},
-            Roots: 
-                No Roots!
-            `);
-    } else if(discriminant === 0) {
-        return console.log(
-            `
-            Equation: ${equation},
-            Discriminant: ${discriminant},
-            Roots: 
-                x: ${(-b + Math.sqrt(discriminant)) / 2 * a}
-            `);
-    } else {
-        return console.log(
-            `
-            Equation: ${equation},
-            Discriminant: ${discriminant},
-            Roots: 
-                x1: ${(-b + Math.sqrt(discriminant)) / 2 * a}, 
-                x2: ${(-b - Math.sqrt(discriminant)) / 2 * a}
-            `);
+    switch(discriminant > 0) {
+        case true: 
+            console.log(
+                `
+                Equation: ${equation},
+                Discriminant: ${discriminant},
+                Roots: 
+                    x1: ${(-b + Math.sqrt(discriminant)) / 2 * a}, 
+                    x2: ${(-b - Math.sqrt(discriminant)) / 2 * a}
+                `);
+            break;
+        case false: 
+            console.log(
+                `
+                Equation: ${equation},
+                Discriminant: ${discriminant},
+                Roots: 
+                    No Roots!
+                `);
+            break;
+        default:
+            console.log(
+                `
+                Equation: ${equation},
+                Discriminant: ${discriminant},
+                Roots: 
+                    x: ${(-b + Math.sqrt(discriminant)) / 2 * a}
+                `);
+            break;
     }
 }
 
